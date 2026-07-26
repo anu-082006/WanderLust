@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
     res.send("Welcome to WanderLust!");
 });
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const MONGO_URL = process.env.ATLASDB_URL;
 
@@ -104,5 +104,5 @@ app.use((err, req, res, next) => {
 });//server-side validation
 
 app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
+    console.log(`Server is running at ${port}`);
 });
