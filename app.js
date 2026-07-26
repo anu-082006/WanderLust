@@ -30,7 +30,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, "/public")));
 
 app.get("/", (req, res) => {
-    res.send("Welcome to WanderLust!");
+    res.redirect("/listings");
 });
 
 const port = process.env.PORT || 3000;
